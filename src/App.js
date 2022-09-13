@@ -9,18 +9,35 @@ constructor(){
   super();
 
   this.state = {
-    name: 'Mike'
+    monsters: [
+    {
+        name: 'Linda',
+        id: '2n2j4j3k'
+      },
+    {
+        name: 'Frank',
+        id: '5n3hg63j4'
+      },
+    {
+        name: 'Jack',
+        id: '9fsh57gh3'
+      },
+      {
+        name: 'Guts',
+        id: '3h57dd9h5'
+      }
+    ] 
   }
 }
 
 render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hi {this.state.name}</p>
-        <button>Change Name</button>
-      </header>
+    {
+      this.state.monsters.map((monster) => {
+        return <div key={monster.id}><h1>{monster.name}</h1></div>;
+      })}
+
     </div>
   );
 
